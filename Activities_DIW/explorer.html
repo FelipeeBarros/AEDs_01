@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Explorar</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="explorer.css">
+    </head>
+        
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://st3.depositphotos.com/1588812/13325/v/450/depositphotos_133255394-stock-illustration-vector-logo-cinema.jpg" alt="">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Principal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="explorer.html">Explorar Séries</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="container my-5">
+        <h2 class="mb-4 text-center" style="color: rgb(0, 0, 0);">Explore Séries</h2>
+
+        <!-- Formulário com filtros -->
+        <form id="search-form" class="mb-4">
+            <div class="input-group">
+                <input type="text" class="form-control" id="search-input" placeholder="Pesquise por uma série ou filme...">
+                <button class="btn btn-dark" type="submit">Buscar</button>
+            </div>
+        </form>
+
+        <!-- Filtros -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <label for="genre-filter" class="form-label">Gênero</label>
+                <select class="form-select" id="genre-filter">
+                    <option value="">Todos</option>
+                    <option value="28">Ação</option>
+                    <option value="12">Aventura</option>
+                    <option value="16">Animação</option>
+                    <option value="35">Comédia</option>
+                    <option value="80">Crime</option>
+                    <option value="18">Drama</option>
+                    <option value="27">Terror</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="popularity-filter" class="form-label">Popularidade</label>
+                <select class="form-select" id="popularity-filter">
+                    <option value="">Todos</option>
+                    <option value="popularity.desc">Mais Populares</option>
+                    <option value="popularity.asc">Menos Populares</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <label for="sort-filter" class="form-label">Ordenar por</label>
+                <select class="form-select" id="sort-filter">
+                    <option value="release_date.desc">Data de Lançamento (Mais Recentes)</option>
+                    <option value="release_date.asc">Data de Lançamento (Mais Antigos)</option>
+                    <option value="vote_average.desc">Avaliação (Mais Altas)</option>
+                    <option value="vote_average.asc">Avaliação (Mais Baixas)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Resultados de busca -->
+        <div id="results" class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Resultados dinâmicos serão exibidos aqui -->
+        </div>
+
+        <!-- Filmes Aleatórios -->
+        <h2 class="mb-4 text-center" style="color: rgb(0, 0, 0);">Filmes Aleatórios</h2>
+        <button id="random-films-btn" class="btn btn-dark mb-4 d-block mx-auto">Carregar Filmes Aleatórios</button>
+        <div id="random-films" class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Filmes aleatórios serão exibidos aqui -->
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Cinema. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const API_KEY = '5f01e1ca4e57bce70b6d8afb70ea4f94'; // Substitua pela sua chave da API TMDb
+        const BASE_URL = 'https://api.themoviedb.org/3';
+        const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+
+        // Função para exibir filmes na tela
+        function displayMovies(movies, container) {
+            container.innerHTML = ''; // Limpa resultados anteriores
+            if (movies.length === 0) {
+                container.innerHTML = '<p class="text-center">Nenhum resultado encontrado.</p>';
+                return;
+            }
+
+            movies.forEach((movie) => {
+                const movieCard = document.createElement('div');
+                movieCard.classList.add('col');
+                movieCard.innerHTML = `
+                    <div class="card h-100 shadow border-0 rounded">
+                        <img src="${movie.poster_path ? IMAGE_BASE_URL + movie.poster_path : 'images/placeholder.png'}" class="card-img-top" alt="${movie.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${movie.title}</h5>
+                            <p>${movie.release_date ? movie.release_date.split('-')[0] : 'Data desconhecida'}</p>
+                            <a href="detalhes.html?id=${movie.id}" class="btn btn-dark w-100">Ver Detalhes</a>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(movieCard);
+            });
+        }
+
+        // Lida com o evento de envio do formulário
+        document.getElementById('search-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const query = document.getElementById('search-input').value.trim();
+            const genre = document.getElementById('genre-filter').value;
+            const popularity = document.getElementById('popularity-filter').value;
+            const sortBy = document.getElementById('sort-filter').value;
+
+            if (!query) {
+                alert('Por favor, insira o nome de uma série ou filme!');
+                return;
+            }
+
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = ''; // Limpa resultados anteriores
+
+            try {
+                let url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}&language=pt-BR`;
+                
+                // Adicionando filtros à URL
+                if (genre) url += `&with_genres=${genre}`;
+                if (popularity) url += `&sort_by=${popularity}`;
+                if (sortBy) url += `&sort_by=${sortBy}`;
+
+                const response = await fetch(url);
+                const data = await response.json();
+
+                displayMovies(data.results, resultsContainer);
+
+            } catch (error) {
+                console.error('Erro ao buscar filmes:', error);
+                resultsContainer.innerHTML = '<p class="text-center">Erro ao buscar os dados. Tente novamente mais tarde.</p>';
+            }
+        });
+
+        // Função para buscar filmes aleatórios
+        async function fetchRandomFilms() {
+            const randomFilmsContainer = document.getElementById('random-films');
+            try {
+                const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=pt-BR&page=${Math.floor(Math.random() * 10) + 1}`);
+                const data = await response.json();
+                displayMovies(data.results, randomFilmsContainer);
+            } catch (error) {
+                console.error('Erro ao buscar filmes aleatórios:', error);
+                randomFilmsContainer.innerHTML = '<p class="text-center">Erro ao buscar filmes aleatórios. Tente novamente mais tarde.</p>';
+            }
+        }
+
+        // Evento para carregar filmes aleatórios
+        document.getElementById('random-films-btn').addEventListener('click', fetchRandomFilms);
+    </script>
+</body>
+</html>

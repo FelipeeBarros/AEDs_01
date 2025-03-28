@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <div class="body-container">
+        <header>
+            <img src="https://st3.depositphotos.com/1588812/13325/v/450/depositphotos_133255394-stock-illustration-vector-logo-cinema.jpg" alt="">
+            <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    </a>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Principal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="explorer.html">Explorar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.html">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </header>
+
+        <main>
+            <div class="popular-seasons">
+                <h2>Séries Populares</h2>
+                <hr>
+                <div class="carrousel-container">
+                    <div id="carouselExampleCaptions" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-caption d-none d-md-block">
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+<body>
+
+
+       <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" id="carouselItems">
+  </div>
+</div>
+      
+        <section class="container my-5">
+            <h2 class="section-title mb-4">Filmes Recomendados</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="recommended-movies">
+            </div>
+        </section>
+    
+        <section class="container mb-5">
+            <h2 class="section-title mb-4">Filmes Novos</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="new-movies">
+            </div>
+        </section>
+    
+        <section class="container mb-5">
+            <h2 class="section-title mb-4">Meus Filmes Favoritos</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="my-movies">
+            </div>
+        </section>
+
+        <div class="user-infos">
+            <h2>Informações do(a) Aluno(a)</h2>
+            <hr>
+            <div class="infos-container">
+                <div class="about-container">
+                    <p>Sobre</p>
+                    <p>Me chamo Felipe Barros, sou aluno da PUC Minas no curso de Ciência da Computação. Esse trabalho foi desenvolvido por mim, com os conhecimentos adquiridos na matéria de Desenvolvimento De Interfaces Web, lecionado pelo professor Rommel Vieira.</p>
+                </div>
+                <div class="card-container">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur.png"
+                                    class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Felipe Silva Barros</h5>
+                                    <p class="card-text">Curso: Ciência da Computação</p>
+                                    <p class="card-text">Turma: A</p>
+                                    <div class="card-social-media-container">
+                                        <p>Redes sociais: </p>
+                                        <ion-icon name="logo-instagram"></ion-icon>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <footer style="background-color: #ffffff; color: #000000;" class="text-center p-4">
+        <p>&copy; 2024 Cinema. Todos os direitos reservados.</p>
+    </footer>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Defina suas chaves da API
+    const API_KEY = '5f01e1ca4e57bce70b6d8afb70ea4f94';
+    const BASE_URL = 'https://api.themoviedb.org/3';
+    const IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+
+    // Função para buscar filmes e séries de uma seção
+    async function fetchMovies(endpoint, containerSelector, limit = 3) {
+        try {
+            const response = await fetch(`${BASE_URL}/${endpoint}?api_key=${API_KEY}&language=pt-BR&page=1`);
+            if (!response.ok) throw new Error(`Erro na resposta da API: ${response.status}`);
+            const data = await response.json();
+            displayMovies(data.results, containerSelector, limit);
+        } catch (error) {
+            console.error(`Erro ao buscar filmes (${endpoint}):`, error);
+        }
+    }
+
+    // Função para exibir os filmes ou séries no HTML com o botão de favoritar
+    function displayMovies(movies, containerSelector, limit = null) {
+        const container = document.querySelector(containerSelector);
+        container.innerHTML = ''; // Limpa o conteúdo atual
+
+        // Limita o número de filmes, se necessário
+        const moviesToDisplay = limit ? movies.slice(0, limit) : movies;
+
+        moviesToDisplay.forEach(movie => {
+            const card = document.createElement('div');
+            card.className = 'col';
+            card.innerHTML = `
+              <div class="card">
+                <a href="movie-details.html?id=${movie.id}&type=${movie.title ? 'movie' : 'tv'}">
+                  <img src="${movie.poster_path ? IMAGE_URL + movie.poster_path : 'images/placeholder.png'}" class="card-img-top" alt="${movie.title || movie.name}">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">${movie.title || movie.name}</h5>
+                  <p class="card-text">${movie.overview || 'Descrição não disponível.'}</p>
+                  <!-- Botão de Favoritar -->
+                  <button class="btn btn-outline-danger favorite-btn">
+                    <i class="fa fa-heart"></i> Favoritar
+                  </button>
+                </div>
+              </div>
+            `;
+
+            // Verifica se o filme ou série já está favoritado
+            const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
+            const isFavorited = favoriteMovies.some(favMovie => favMovie.id === movie.id);
+
+            const favoriteButton = card.querySelector('.favorite-btn');
+            if (isFavorited) {
+                favoriteButton.classList.add('favorited');
+                favoriteButton.innerHTML = `<i class="fa fa-heart"></i> Desfavoritar`;
+            }
+
+            // Adiciona o evento de clique para favoritar/desfavoritar
+            favoriteButton.addEventListener('click', () => {
+                toggleFavorite(favoriteButton, movie);
+            });
+
+            container.appendChild(card);
+        });
+    }
+
+    // Função para alternar o estado de favorito
+    function toggleFavorite(button, movie) {
+        const isFavorited = button.classList.contains('favorited');
+
+        if (isFavorited) {
+            button.classList.remove('favorited');
+            button.innerHTML = `<i class="fa fa-heart"></i> Favoritar`;
+            removeFromFavorites(movie);
+        } else {
+            button.classList.add('favorited');
+            button.innerHTML = `<i class="fa fa-heart"></i> Desfavoritar`;
+            addToFavorites(movie);
+        }
+    }
+
+    // Função para adicionar um filme ou série aos favoritos
+    function addToFavorites(movie) {
+        const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
+        
+        // Verifica se o filme ou série já está nos favoritos
+        if (!favoriteMovies.find(favMovie => favMovie.id === movie.id)) {
+            favoriteMovies.push(movie);
+            localStorage.setItem('favoriteMovies', JSON.stringify(favoriteMovies));
+            updateMyMoviesSection();
+        }
+    }
+
+    // Função para remover um filme ou série dos favoritos
+    function removeFromFavorites(movie) {
+        let favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
+        favoriteMovies = favoriteMovies.filter(favMovie => favMovie.id !== movie.id);
+        localStorage.setItem('favoriteMovies', JSON.stringify(favoriteMovies));
+        updateMyMoviesSection();
+    }
+
+    // Função para atualizar a seção "Meus Filmes"
+    function updateMyMoviesSection() {
+        const favoriteMovies = JSON.parse(localStorage.getItem('favoriteMovies')) || [];
+        const container = document.querySelector('#my-movies'); // Certifique-se de que o ID está correto para a seção
+
+        container.innerHTML = ''; // Limpa o conteúdo atual
+
+        if (favoriteMovies.length === 0) {
+            container.innerHTML = '<p class="text-center">Você ainda não favoritou nenhum filme ou série.</p>';
+        } else {
+            // Limita a 3 filmes ou séries aleatórias, ou o número disponível se houver menos de 3
+            const randomMovies = getRandomMovies(favoriteMovies, 3);
+
+            randomMovies.forEach(movie => {
+                const card = document.createElement('div');
+                card.className = 'col';
+                card.innerHTML = `
+                    <div class="card">
+                        <a href="movie-details.html?id=${movie.id}&type=${movie.title ? 'movie' : 'tv'}">
+                            <img src="${movie.poster_path ? IMAGE_URL + movie.poster_path : 'images/placeholder.png'}" class="card-img-top" alt="${movie.title || movie.name}">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">${movie.title || movie.name}</h5>
+                            <p class="card-text">${movie.overview || 'Descrição não disponível.'}</p>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+    }
+
+    // Função para obter N filmes ou séries aleatórios de uma lista
+    function getRandomMovies(movies, count) {
+        const shuffled = [...movies]; // Cria uma cópia da lista
+        let i = movies.length, t, j;
+
+        // Embaralha a lista
+        while (i) {
+            j = Math.floor(Math.random() * i--);
+            t = shuffled[i];
+            shuffled[i] = shuffled[j];
+            shuffled[j] = t;
+        }
+
+        // Garante que não tentaremos acessar mais filmes do que o número disponível
+        return shuffled.slice(0, Math.min(count, shuffled.length));
+    }
+
+    // Função para buscar filmes e séries populares ou em cartaz aleatórios
+async function fetchRandomMovies() {
+    try {
+        const response = await fetch(`${BASE_URL}/movie/popular?api_key=${API_KEY}&language=pt-BR&page=1`);
+        if (!response.ok) throw new Error(`Erro na resposta da API: ${response.status}`);
+        const data = await response.json();
+        const movies = data.results;
+
+        // Selecione 3 filmes aleatórios do conjunto de filmes populares
+        const randomMovies = getRandomMovies(movies, 3);
+        updateCarousel(randomMovies);
+    } catch (error) {
+        console.error('Erro ao buscar filmes aleatórios:', error);
+    }
+}
+
+// Função para atualizar o carrossel com filmes ou séries
+function updateCarousel(movies) {
+    const carouselInner = document.querySelector('.carousel-inner');
+    carouselInner.innerHTML = ''; // Limpa o carrossel atual
+
+    // Adiciona as imagens ao carrossel
+    movies.forEach((movie, index) => {
+        const activeClass = index === 0 ? 'active' : '';
+        const carouselItem = document.createElement('div');
+        carouselItem.className = `carousel-item ${activeClass}`;
+
+        // Verifica se a imagem do filme está disponível e, caso contrário, usa o placeholder
+        const imageUrl = movie.poster_path ? IMAGE_URL + movie.poster_path : 'images/placeholder.png';
+
+        carouselItem.innerHTML = `
+            <img src="${imageUrl}" class="d-block w-100 carousel-img" alt="${movie.title || movie.name}">
+        `;
+        carouselInner.appendChild(carouselItem);
+    });
+}
+
+// Inicializa o carregamento das seções
+document.addEventListener('DOMContentLoaded', () => {
+    fetchRandomMovies(); // Chama a função para buscar filmes aleatórios e atualizar o carrossel
+    fetchMovies('movie/popular', '#recommended-movies', 3); // Filmes recomendados
+    fetchMovies('movie/now_playing', '#new-movies', 3); // Filmes novos
+    updateMyMoviesSection(); // Atualiza a seção "Meus Filmes"
+});
+
+
+    // Inicializa o carregamento das seções
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchMovies('movie/popular', '#recommended-movies', 3); // Filmes recomendados
+        fetchMovies('movie/now_playing', '#new-movies', 3); // Filmes novos
+        updateMyMoviesSection(); // Atualiza a seção "Meus Filmes"
+    });
+
+    // Função para carregar detalhes do filme ou série
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = urlParams.get('id');
+        const type = urlParams.get('type');
+
+        if (movieId && type) {
+            fetchMovieDetails(movieId, type); // Busca os detalhes do filme ou série
+        } else {
+            console.log('ID ou tipo não fornecido na URL.');
+        }
+    });
+
+    // Função para buscar detalhes do filme ou série
+    async function fetchMovieDetails(movieId, type) {
+        try {
+            const response = await fetch(`${BASE_URL}/${type}/${movieId}?api_key=${API_KEY}&language=pt-BR`);
+            if (!response.ok) throw new Error('Erro ao buscar detalhes do filme ou série.');
+            const movieDetails = await response.json();
+            displayMovieDetails(movieDetails);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    // Exibe os detalhes do filme ou série
+    function displayMovieDetails(movie) {
+        const container = document.querySelector('#movie-details');
+        container.innerHTML = `
+            <h1>${movie.title || movie.name}</h1>
+            <img src="${IMAGE_URL + movie.poster_path}" alt="${movie.title || movie.name}">
+            <p>${movie.overview}</p>
+        `;
+    }
+</script>
+</body>
+</html>

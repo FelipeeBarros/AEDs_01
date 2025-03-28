@@ -1,0 +1,21 @@
+{
+  "perfil": [
+    {
+      "id": 1,
+      "nome": "Felipe Silva Barros",
+      "curso": "Ciências da Computação",
+      "email": "felipebarros11052507@gmail.com",
+      "facebook": "https://www.facebook.com/felipebarros",
+      "twitter": "https://twitter.com/eofelpss",
+      "instagram": "https://www.instagram.com/felipe.barros051/",
+      "biografia": "Me chamo Felipe Barros, sou aluno da PUC Minas no curso de Ciência da Computação. Sou fã da tecnologia e sempre busco aprimorar meus conhecimentos!."
+    }
+  ],
+  "series_preferidas": [
+    {
+      "id_conteudo": 1,
+      "id_serie": 12345,
+      "id_usuario": 1
+    }
+  ]
+}

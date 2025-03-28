@@ -1,0 +1,87 @@
+body {
+    background-color: #f8f9fa; 
+    color: #343a40; 
+    font-family: 'Ruttan Elegant', sans-serif; 
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; 
+}
+
+.navbar {
+    background-color: #ffffff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    padding: 10px 20px;
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    width: auto;
+}
+
+a {
+    color: #343a40;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ff4757;
+}
+
+.btn-light {
+    background-color: #ff4757;
+    border-color: #ff4757;
+    color: #ffffff;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.btn-light:hover {
+    background-color: #e84118;
+    border-color: #e84118;
+    color: #ffffff;
+}
+
+.movie-poster {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.favorite-btn {
+    background-color: transparent;
+    border: 2px solid #ff4757;
+    color: #ff4757;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.favorite-btn.favorited {
+    background-color: #ff4757;
+    color: #ffffff;
+}
+
+.favorite-btn:hover {
+    background-color: #e84118;
+    border-color: #e84118;
+    color: #ffffff;
+}
+
+.cast-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cast-member p {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.trailer-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
