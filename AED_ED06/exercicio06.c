@@ -52,6 +52,16 @@ void denominadorDecrescente(int atual, int quantidade, int limite)
     denominadorDecrescente(atual - 3, quantidade + 1, limite);
 }
 
+void positivosTres(int atual, int proximoImpar, int quantidade, int limite)
+{
+    if (quantidade >= limite)
+    {
+        return;
+    }
+    printf("%d ", atual);
+    positivosTres(atual + proximoImpar, proximoImpar + 2, quantidade + 1, limite);
+}
+
 void exercicio0611(void)
 {
     int n = 0;
@@ -121,6 +131,8 @@ void exercicio0615(void)
     printf("%s\n", "Digite a quantidade de termos: ");
     scanf("%d", &n);
     getchar();
+
+    positivosTres(3, 1, 0, n);
 
     printf("\n%s\n", "\nAperte ENTER para continuar");
     getchar();
