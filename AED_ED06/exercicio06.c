@@ -4,6 +4,8 @@ Author: Felipe Silva Barros
 */
 
 #include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 #define MAX 100
 
 void multiplosTres(int atual, int quantidade, int limite)
@@ -60,6 +62,61 @@ void positivosTres(int atual, int proximoImpar, int quantidade, int limite)
     }
     printf("%d ", atual);
     positivosTres(atual + proximoImpar, proximoImpar + 2, quantidade + 1, limite);
+}
+
+double somaInversos(int valor, int atual)
+{
+    if (valor == 0)
+        return 0;
+    return 1.0 / atual + somaInversos(valor - 1, atual + 6);
+}
+
+void mostrarInvertido(char *str, int index)
+{
+    if (index < 0)
+        return;
+    printf("%c\n", str[index]);
+    mostrarInvertido(str, index - 1);
+}
+
+int contarDigitosPares(char *str, int index)
+{
+    if (str[index] == '\0')
+        return 0;
+    if (isdigit(str[index]) && (str[index] - '0') % 2 == 0)
+        return 1 + contarDigitosPares(str, index + 1);
+    else
+        return contarDigitosPares(str, index + 1);
+}
+
+int contarMaiusculasEntreC_P(char *str, int index)
+{
+    if (str[index] == '\0')
+        return 0;
+    if (str[index] >= 'D' && str[index] <= 'O')
+        return 1 + contarMaiusculasEntreC_P(str, index + 1);
+    else
+        return contarMaiusculasEntreC_P(str, index + 1);
+}
+
+int fibonacci(int n)
+{
+    if (n == 0)
+        return 0;
+    if (n == 1)
+        return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int somaFibonacciPares(int quantidade, int n, int soma)
+{
+    if (quantidade == 0)
+        return soma;
+    int termo = fibonacci(n);
+    if (termo % 2 == 0)
+        return somaFibonacciPares(quantidade - 1, n + 1, soma + termo);
+    else
+        return somaFibonacciPares(quantidade, n + 1, soma);
 }
 
 void exercicio0611(void)
@@ -141,16 +198,12 @@ void exercicio0615(void)
 void exercicio0616(void)
 {
     int n = 0;
-    int valores[MAX];
 
     printf("%s\n", "Digite a quantidade de termos: ");
     scanf("%d", &n);
     getchar();
 
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", valores[i]);
-    }
+    printf("Soma dos inversos: %.6lf\n", somaInversos(n, 3));
 
     printf("\n%s\n", "\nAperte ENTER para continuar");
     getchar();
@@ -158,36 +211,25 @@ void exercicio0616(void)
 
 void exercicio0617(void)
 {
-    int n = 0;
-    int i = 0;
-    int valores[MAX];
-
-    printf("%s\n", "Digite a quantidade de termos: ");
-    scanf("%d", &n);
+    char sequencia[100];
+    printf("Digite uma cadeia de caracteres: ");
+    scanf("%s", sequencia);
     getchar();
 
-    for (i = 0; i < n; i++)
-    {
-        printf("1/%d ", valores[i]);
-    }
+    mostrarInvertido(sequencia, strlen(sequencia) - 1);
+
     printf("\n%s\n", "\nAperte ENTER para continuar");
     getchar();
 }
 
 void exercicio0618(void)
 {
-    int n = 0;
-    int i = 0;
-    int valores[MAX];
-
-    printf("%s\n", "Digite a quantidade de termos: ");
-    scanf("%d", &n);
+    char sequencia[100];
+    printf("Digite uma cadeia de caracteres: ");
+    scanf("%s", sequencia);
     getchar();
 
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", valores[i]);
-    }
+    printf("Quantidade de digitos pares: %d\n", contarDigitosPares(sequencia, 0));
 
     printf("\n%s\n", "\nAperte ENTER para continuar");
     getchar();
@@ -195,18 +237,12 @@ void exercicio0618(void)
 
 void exercicio0619(void)
 {
-    int n = 0;
-    int i = 0;
-    int valores[MAX];
-
-    printf("%s\n", "Digite a quantidade de termos: ");
-    scanf("%d", &n);
+    char sequencia[100];
+    printf("Digite uma cadeia de caracteres: ");
+    scanf("%s", sequencia);
     getchar();
 
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", valores[i]);
-    }
+    printf("Quantidade de maiusculas entre 'C' e 'P': %d\n", contarMaiusculasEntreC_P(sequencia, 0));
 
     printf("\n%s\n", "\nAperte ENTER para continuar");
     getchar();
@@ -214,18 +250,12 @@ void exercicio0619(void)
 
 void exercicio0620(void)
 {
-    int n = 0;
-    int i = 0;
-    int valores[MAX];
-
-    printf("%s\n", "Digite a quantidade de termos: ");
-    scanf("%d", &n);
+    int quantidade = 0;
+    printf("Digite a quantidade de termos pares da Fibonacci: ");
+    scanf("%d", &quantidade);
     getchar();
 
-    for (i = n; i > 0; i--)
-    {
-        printf("1/%d ", valores[i]);
-    }
+    printf("Soma dos pares: %d\n", somaFibonacciPares(quantidade, 0, 0));
 
     printf("\n%s\n", "\nAperte ENTER para continuar");
     getchar();

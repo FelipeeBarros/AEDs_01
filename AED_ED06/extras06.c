@@ -1,91 +1,43 @@
 /*
-Extra05 - v0.0. - 28 / 03 / 2025
+Extra06 - v0.0. - 06 / 04 / 2025
 Author: Felipe Silva Barros
 */
 
 #include <stdio.h>
-#define MAX 100
+#include <math.h>
 
-int fatorial(int x, int valores[MAX])
-{
-    int i = 0;
-    int y = 0;
-    int soma = 1;
-
-    y = x;
-
-    if (x < 0)
-    {
-        printf("ERRO! Valor inserido menor que zero!\n");
+double funcaoE1(int x, int n, int expoente) {
+    if (n == 0)
         return 0;
-    }
-
-    while (i < x)
-    {
-        valores[i] = x - i;
-        soma *= valores[i];
-        y = y - 1;
-        i = i + 1;
-    }
-    return soma;
+    return pow(x, expoente) + funcaoE1(x, n - 1, expoente + 2);
 }
 
-double fatorialDenominador(int x)
-{
-    double fat = 1.0;
-    for (int i = 2; i <= x; i++)
-    {
-        fat *= i;
-    }
-    return fat;
+double fatorial(double n) {
+    if (n <= 1)
+        return 1.0;
+    return n * fatorial(n - 1);
 }
 
-double calcularF(int n)
-{
-    double resultado = 1.0;
-
-    printf("Calculo:\n");
-
-    for (int i = 1; i <= n; i++)
-    {
-        int num = 2 * i;
-        int den = 2 * i + 1;
-        double fat = fatorialDenominador(den);
-        double termo = 1 + (num / fat);
-
-        printf("(1 + %d/%d!)", num, den);
-
-        if (i < n)
-        {
-            printf(" * ");
-        }
-
-        resultado *= termo;
-    }
-
-    printf("\n");
-    return resultado;
+double funcaoE2(int termo, int numerador, int denominador) {
+    if (termo == 0)
+        return 0.0;
+    return (double)numerador / fatorial((double)denominador) + funcaoE2(termo - 1, numerador + 2, denominador * 2);
 }
 
 void extra01()
 {
-    int i = 0;
+    int x = 0;
     int n = 0;
-    int soma = 0;
-    int valores[MAX];
 
-    printf("%s\n", "Digite um valor para retornar o fatorial: ");
-    scanf("%d", &n);
+    printf("Digite o valor de x: ");
+    scanf("%d", &x);
     getchar();
 
-    soma = fatorial(n, valores);
-
-    for (i = 0; i < n; i++)
-    {
-        printf("%d ", valores[i]);
-    }
-
-    printf("\nFatorial = %d\n", soma);
+    printf("Digite a quantidade de termos: ");
+    scanf("%d", &n);
+    getchar();
+    
+    printf("Resultado: %.2lf\n", 1 + funcaoE1(x, n, 3));
 
     printf("\n%s\n", "Aperte ENTER para continuar.");
     getchar();
@@ -93,20 +45,13 @@ void extra01()
 
 void extra02()
 {
-    int n;
+    int n = 0;
 
-    printf("Digite um valor inteiro para n: ");
+    printf("Digite a quantidade de termos: ");
     scanf("%d", &n);
     getchar();
 
-    if (n < 1)
-    {
-        printf("ERRO! Insira um valor maior ou igual a 1.\n");
-        return;
-    }
-
-    double resultado = calcularF(n);
-    printf("\nf(%d) = %.6lf\n", n, resultado);
+    printf("Resultado: %.10lf\n", 1.0 + funcaoE2(n, 3, 2));
 
     printf("\nAperte ENTER para continuar.");
     getchar();
@@ -115,7 +60,7 @@ void extra02()
 int main()
 {
     int opcao = 0;
-    printf("%s\n", "Extra04 - Programa = v0.0");
+    printf("%s\n", "Extra06 - Programa = v0.0");
     printf("%s\n", "Autor: Felipe Silva Barros");
     printf("\n");
 
