@@ -43,12 +43,12 @@ void encontrarPalavrasSemE(char palavras[][100], int n, char resultado[][100], i
 
 void exercicio08E1(void)
 {
-    int numero;
+    int numero = 0;
     printf("Digite um numero inteiro: ");
     scanf("%d", &numero);
     getchar();
 
-    int quantidade;
+    int quantidade = 0;
     int divisores[numero];
     calcularDivisoresPares(numero, &quantidade, divisores);
 
@@ -97,7 +97,7 @@ void exercicio08E2(void)
     fclose(arquivo);
 
     char resultado[10][100];
-    int quantidade;
+    int quantidade = 0;
     encontrarPalavrasSemE(palavras, n, resultado, &quantidade);
 
     printf("Palavras que nao comecam nem terminam com 'E':\n");

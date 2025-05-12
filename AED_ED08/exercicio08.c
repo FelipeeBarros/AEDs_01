@@ -165,7 +165,7 @@ int acharQuantos(int procurado, int inicio, int n, int arranjo[])
 
 void exercicio0811(void)
 {
-    int n;
+    int n = 0;
     int arranjo[100];
 
     lerPares(&n, arranjo);
@@ -196,7 +196,9 @@ void exercicio0812(void)
 
 void exercicio0813(void)
 {
-    int inferior, superior, N;
+    int inferior = 0;
+    int superior = 0;
+    int N = 0;
     printf("Digite o limite inferior: ");
     scanf("%d", &inferior);
     getchar();
@@ -245,7 +247,7 @@ void exercicio0814(void)
         return;
     }
 
-    int n;
+    int n = 0;
     fscanf(arquivo, "%d", &n);
     int arranjo[n];
     for (int i = 0; i < n; i++)
@@ -277,7 +279,7 @@ void exercicio0815(void)
         return;
     }
 
-    int n;
+    int n = 0;
     fscanf(arquivo, "%d", &n);
     int arranjo[n];
     for (int i = 0; i < n; i++)
@@ -309,7 +311,7 @@ void exercicio0816(void)
         return;
     }
 
-    int n;
+    int n = 0;
     fscanf(arquivo, "%d", &n);
     int arranjo[n];
     for (int i = 0; i < n; i++)
@@ -357,7 +359,7 @@ void exercicio0816(void)
 
 void exercicio0817(void)
 {
-    int n;
+    int n = 0;
     printf("Digite o tamanho do arranjo: ");
     scanf("%d", &n);
     getchar();
@@ -393,7 +395,7 @@ void exercicio0818(void)
         return;
     }
 
-    int n;
+    int n = 0;
     fscanf(arquivo, "%d", &n);
     int arranjo[n];
     for (int i = 0; i < n; i++)
@@ -402,12 +404,12 @@ void exercicio0818(void)
     }
     fclose(arquivo);
 
-    int procurado;
+    int procurado = 0;
     printf("Digite o valor a procurar: ");
     scanf("%d", &procurado);
     getchar();
 
-    int inicio;
+    int inicio = 0;
     printf("Digite a posicao inicial: ");
     scanf("%d", &inicio);
     getchar();
@@ -434,7 +436,7 @@ void exercicio0819(void)
         return;
     }
 
-    int n;
+    int n = 0;
     fscanf(arquivo, "%d", &n);
     int arranjo[n];
     for (int i = 0; i < n; i++)
@@ -443,12 +445,12 @@ void exercicio0819(void)
     }
     fclose(arquivo);
 
-    int procurado;
+    int procurado = 0;
     printf("Digite o valor a procurar: ");
     scanf("%d", &procurado);
     getchar();
 
-    int inicio;
+    int inicio = 0;
     printf("Digite a posicao inicial: ");
     scanf("%d", &inicio);
     getchar();
@@ -476,7 +478,7 @@ void exercicio0820(void)
         return;
     }
 
-    int n;
+    int n = 0;
     fscanf(arquivo, "%d", &n);
     int arranjo[n];
     for (int i = 0; i < n; i++)
@@ -485,12 +487,12 @@ void exercicio0820(void)
     }
     fclose(arquivo);
 
-    int procurado;
+    int procurado = 0;
     printf("Digite o valor a procurar: ");
     scanf("%d", &procurado);
     getchar();
 
-    int inicio;
+    int inicio = 0;
     printf("Digite a posicao inicial: ");
     scanf("%d", &inicio);
     getchar();
